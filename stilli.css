@@ -183,6 +183,12 @@
 	display: block;
 }
 
+.perifer3 {
+	float: right;
+	height: 300px;
+	border-radius: 50px;
+}
+
 .vnutr1 {
 	float: right;
 	height: 600px;
