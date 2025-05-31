@@ -209,6 +209,31 @@
 	height: 300px;
 	border-radius: 50px;
 }
+
+.operativka {
+	float: right;
+	height: 300px;
+	border-radius: 50px;
+}
+
+.nakop {
+	float: right;
+	height: 300px;
+	border-radius: 50px;
+}
+
+.blok {
+	float: right;
+	height: 300px;
+	border-radius: 50px;
+}
+
+.viduxa {
+	float: right;
+	height: 300px;
+	border-radius: 50px;
+}
+
 .vstupsbor {
 	color: white;
 	font-size: 80px;
