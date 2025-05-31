@@ -264,6 +264,21 @@
 
 /* Производители */
 
+.nvidia {
+	float: right;
+	height: 300px;
+	border-radius: 50px;
+}
+.intel {
+	float: right;
+	height: 300px;
+	border-radius: 50px;
+}
+.amd {
+	float: right;
+	height: 300px;
+	border-radius: 50px;
+}
 .nachproizv {
 	color: white;
 	font-size: 80px;
