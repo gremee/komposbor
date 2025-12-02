@@ -1,127 +1,319 @@
+/* Сброс стандартных отступов и базовая настройка */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* Базовый размер шрифта */
+}
+
+/* Навигационная панель */
 .navbar {
-	width: 100%;
-	height:200px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
-	background-color: gray;
-
-	border-radius: 25px;
+    width: 100%;
+    min-height: 100px;
+    background-color: gray;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+    border-radius: 0 0 25px 25px;
+    position: relative;
+    overflow: hidden;
 }
 
-.navbar .container {
-	height: inherit;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+/* Контейнер для центрирования */
+.container {
+    max-width: 1400px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 30px; /* Увеличил паддинг */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* Запрещаем перенос */
 }
 
-.navbar-menu {
-	display: inline-flex;
-	list-style-type: none;
-	padding-left: 0;
-	margin-bottom: 0;
-}
-
-.navbar-menu li {
-	display: inline-block;
-}
-
-.navbar-menu li a {
-	display: inline-block;
-	color: black;
-	opacity: 0.6;
-	text-decoration: none;
-	padding: 20px;
-	transition: all .07s ease-in-out;
-}
-
-.navbar-menu li a:hover {
-	opacity: 1;
-}
-
-.navbar-wrap {
-	display: flex;
-	flex-flow: row nowrap;
-	font-size: 36px;
-	font-family: Copperplate, Papyrus, fantasy;
-}
-.callback {
-	margin-Left: 30px;
-	margin-right: 10px;
-	padding: 10px;
-	background-color: coral;
-	border-radius: 100px;
-	color: white;
-	text-decoration: none;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	transition: all .1s ease-in-out;
-	box-sizing: border-box;
-}
-
-.callback:hover {
-	transform: scale(1.04);
-	transition: all .07s ease-in-out;
-}
-
+/* Логотип - улучшенное выравнивание */
 .navbar-brand {
-	font-weight: 700;
-	font-size: 56px;
-	text-decoration: none;
-	color: black;
-	margin-Left: 30px;
-	font-family: "Arial Black", Gadget, sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem; /* Используем rem для масштабирования */
+    text-decoration: none;
+    color: black;
+    font-family: "Arial Black", Gadget, sans-serif;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    line-height: 1.2; /* Выравнивание по вертикали */
 }
 
 .navbar-brand:hover {
-	color: rgba(222, 141, 87, 1);
-	transition: all .07s ease-in-out;
+    color: rgba(222, 141, 87, 1);
+    transition: all .07s ease-in-out;
 }
 
+/* Обертка для меню - исправляем выравнивание */
+.navbar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: Copperplate, Papyrus, fantasy;
+    height: 100%; /* Важно для выравнивания */
+}
+
+/* Основное меню - улучшенное выравнивание */
+.navbar-menu {
+    display: flex;
+    list-style-type: none;
+    gap: 10px; /* Уменьшил отступ между пунктами */
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Выравниваем по центру */
+    height: 100%; /* Занимает всю высоту родителя */
+}
+
+.navbar-menu li {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Каждый пункт меню занимает всю высоту */
+}
+
+.navbar-menu li a {
+    color: black;
+    opacity: 0.8;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 1.4rem; /* Увеличил размер шрифта */
+    transition: all .07s ease-in-out;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    height: 100%; /* Ссылка занимает всю высоту li */
+    line-height: 1.2; /* Для вертикального выравнивания текста */
+    text-align: center;
+    white-space: nowrap; /* Запрещаем перенос текста */
+}
+
+.navbar-menu li a:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Кнопка Интерактив - фиксируем положение */
+.callback {
+    padding: 12px 30px;
+    background-color: coral;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem; /* Увеличил размер шрифта */
+    transition: all .1s ease-in-out;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px; /* Фиксированная высота для стабильности */
+    min-width: 140px; /* Минимальная ширина */
+    box-sizing: border-box;
+    margin-left: 10px; /* Заменяем gap на margin для лучшего контроля */
+}
+
+.callback:hover {
+    transform: scale(1.04);
+    background-color: #ff7f50;
+}
+
+/* Главное изображение */
 .glavkart {
-	height: 450px;
-	border-radius: 50px;
-	margin: 130px;
-	filter: drop-shadow(0 0 130px #555);
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+    width: 90%;
+    max-width: 1200px;
+    height: auto;
+    max-height: 450px;
+    border-radius: 50px;
+    margin: 60px auto;
+    display: block;
+    filter: drop-shadow(0 0 20px rgba(85, 85, 85, 0.5));
+    transition: all .07s ease-in-out;
+    object-fit: cover;
 }
 
 .glavkart:hover {
-	transform: scale(1.04);
-	transition: all .07s ease-in-out;
-}
-  
-.perex{
-	margin-Left:10%;
-	font-size:35px;
-	font-family: Gadget, sans-serif;
-	display: inline-flex;
+    transform: scale(1.02);
 }
 
-.pravoa {
-	text-decoration: none;
-	background-color: coral;
-	padding: 40px;
-	border-radius:200px;
+/* Блок с ссылками */
+.perex {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px auto;
+    max-width: 1400px;
+    padding: 0 20px;
+    flex-wrap: wrap;
 }
 
-.levoa {
-	text-decoration: none;
-	background-color: coral;
-	padding: 40px;
-	border-radius:200px;
+/* Общие стили для ссылок */
+.levoa, .pravoa {
+    text-decoration: none;
+    background-color: coral;
+    color: white;
+    padding: 25px 40px;
+    border-radius: 100px;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: all .07s ease-in-out;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px; /* Фиксированная высота для ровных кнопок */
 }
 
-.pravoa:hover{
-	transform: scale(1.04);
-	transition: all .07s ease-in-out;
+.levoa:hover, .pravoa:hover {
+    transform: scale(1.04);
+    background-color: #ff7f50;
+}
+/* Контейнер для центральной кнопки - между меню и картинкой */
+.center-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+    width: 100%;
+    padding: 0 20px;
 }
 
-.levoa:hover{
-	transform: scale(1.04);
-	transition: all .07s ease-in-out;
+/* Стиль для центральной кнопки */
+.center-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 45px;
+    background: linear-gradient(145deg, #00C853, #00E676); /* Яркий зеленый градиент */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    transition: all 0.25s ease;
+    box-shadow: 
+        0 6px 15px rgba(0, 200, 83, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    min-width: 260px;
+    height: 65px;
+    border: 2px solid #00E676;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Эффект свечения при наведении */
+.center-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, #00E676, #00C853);
+    border-radius: 50px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.center-button:hover::before {
+    opacity: 1;
+}
+
+/* Эффект при наведении */
+.center-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 10px 25px rgba(0, 200, 83, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    border-color: #64FFDA;
+    color: #F1F8E9;
+}
+
+/* Эффект при нажатии */
+.center-button:active {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 4px 12px rgba(0, 200, 83, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Анимация блеска */
+.center-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 100%
+    );
+    transform: rotate(30deg);
+    transition: transform 0.7s ease;
+    z-index: -1;
+}
+
+.center-button:hover::after {
+    transform: rotate(30deg) translate(10%, 10%);
+}
+
+/* Обновляем отступы для картинки, чтобы учесть новую кнопку */
+.glavkart {
+    height: 450px;
+    border-radius: 50px;
+    margin: 60px auto 80px; /* Уменьшил верхний отступ, увеличил нижний */
+    filter: drop-shadow(0 0 130px #555);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+}
+
+/* Для адаптивности добавляем медиа-запросы */
+@media (max-width: 768px) {
+    .center-button-container {
+        margin: 30px auto;
+    }
+    
+    .center-button {
+        padding: 15px 35px;
+        font-size: 1.4rem;
+        min-width: 220px;
+        height: 55px;
+    }
+    
+    .glavkart {
+        margin: 40px auto 60px;
+        height: auto;
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .center-button {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+        min-width: 200px;
+        height: 50px;
+        letter-spacing: 0.8px;
+    }
 }
 
 /* Внутренние комплектующие */
@@ -353,4 +545,72 @@
 	font-size: 20px;
 	font-family: Gadget, sans-serif;
 	padding-left: 20px;
+}
+/* Защита от слишком большого масштабирования */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 40px;
+    }
+    
+    .navbar-menu {
+        gap: 15px;
+    }
+    
+    .navbar-menu li a {
+        font-size: 1.5rem;
+    }
+    
+    .callback {
+        font-size: 1.5rem;
+        min-width: 160px;
+    }
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+    .navbar-brand {
+        font-size: 2rem;
+    }
+    
+    .navbar-menu li a {
+        font-size: 1.2rem;
+        padding: 12px 15px;
+    }
+    
+    .callback {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        min-width: 130px;
+        height: 45px;
+    }
+}
+
+/* Адаптивность для телефонов */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    
+    .navbar-brand {
+        margin-bottom: 15px;
+        font-size: 1.8rem;
+    }
+    
+    .navbar-wrap {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .navbar-menu {
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .callback {
+        margin-left: 0;
+        margin-top: 10px;
+    }
 }
